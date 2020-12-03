@@ -1,0 +1,8 @@
+.social-medias a {
+  margin: 0 10px;
+}
+
+.social-media-icon {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
