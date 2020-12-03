@@ -3,7 +3,6 @@ import React from 'react'
 import IntroText from '../../components/intro-text/intro-text.component';
 import ProfilePicture from '../../components/profile-picture/profile-picture.component';
 import SocialMedias from '../../components/social-medias/social-medias.component';
-import Menu from '../../components/menu/menu.component';
 
 import './home-page.styles.css';
 
@@ -13,8 +12,6 @@ const HomePage = () => {
       <IntroText />
       <ProfilePicture />
       <SocialMedias />
-      <hr />
-      <Menu />
     </div>
   )
 }
