@@ -1,0 +1,22 @@
+.resume {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.education-item, .professional-experience-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40ch;
+}
+
+.education-item *, .professional-experience-item * {
+  margin: 5px 0;
+}
+
+li {
+  text-align: left;
+}
