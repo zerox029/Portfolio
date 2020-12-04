@@ -1,7 +1,7 @@
 import React from 'react';
 import TextTransition, { presets } from 'react-text-transition';
 
-import { EDUCATION } from './resume.data';
+import { EDUCATION, WORK } from './resume.data';
 
 import './resume-page.styles.css';
 
@@ -11,6 +11,7 @@ class Resume extends React.Component {
 
     this.state = {
       eduIndex: 0,
+      proIndex: 0
     }
   }
 
@@ -27,13 +28,15 @@ class Resume extends React.Component {
         </div>
         <div className="professional-experience">
           <h2>Professional Experience</h2>
-          <div className="professional-experience-item">
-            <b>Programming internship</b>
-            <i>CREO inc / Montréal, QC / 2017 (Summer)</i>
+          <div className="professional-experience-item" onClick={() => { this.setState({proIndex: this.state.proIndex + 1}) }}>
+            <b><TextTransition text={WORK[this.state.proIndex % WORK.length].title} springConfig={ presets.gentle } inline /></b>
+            <i><TextTransition text={WORK[this.state.proIndex % WORK.length].subtitle} springConfig={ presets.gentle } inline /></i>
             <ul>
-              <li>Develop software capable of emulating electrical circuitry</li>
-              <li>Program in Unity with the C# language</li>
-              <li>Integrate and debug external software</li>
+              {
+                WORK[this.state.proIndex % WORK.length].tasks.map(task => {
+                  return <li><TextTransition text={task} springConfig={ presets.gentle } /></li>
+                })
+              }
             </ul>
           </div>
         </div>
